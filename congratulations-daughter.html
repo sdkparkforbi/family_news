@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎊 축하합니다! 안산 동산고 합격 - 가족 뉴스</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Noto Sans KR', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .article-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+
+        /* 축하 헤더 */
+        .celebration-header {
+            background: linear-gradient(135deg, #ff6b6b 0%, #feca57 50%, #48dbfb 100%);
+            padding: 40px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .celebration-header::before {
+            content: "🎊 🎉 🌟 ✨ 🎊 🎉 🌟 ✨ 🎊 🎉";
+            position: absolute;
+            top: 10px;
+            left: 0;
+            right: 0;
+            font-size: 1.5em;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .celebration-header::after {
+            content: "🎊 🎉 🌟 ✨ 🎊 🎉 🌟 ✨ 🎊 🎉";
+            position: absolute;
+            bottom: 10px;
+            left: 0;
+            right: 0;
+            font-size: 1.5em;
+            animation: float 3s ease-in-out infinite reverse;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .news-badge {
+            display: inline-block;
+            background: #e74c3c;
+            color: white;
+            padding: 8px 25px;
+            border-radius: 30px;
+            font-size: 0.9em;
+            font-weight: 700;
+            margin-bottom: 20px;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        .celebration-header h1 {
+            font-size: 2.5em;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            margin-bottom: 15px;
+            line-height: 1.3;
+        }
+
+        .celebration-header .subtitle {
+            font-size: 1.3em;
+            color: white;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+        }
+
+        /* 기사 내용 */
+        .article-content {
+            padding: 40px;
+            line-height: 2;
+        }
+
+        .article-meta {
+            display: flex;
+            justify-content: space-between;
+            color: #888;
+            font-size: 0.9em;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #eee;
+            margin-bottom: 30px;
+        }
+
+        .highlight-score {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            margin: 30px 0;
+        }
+
+        .score-number {
+            font-size: 4em;
+            font-weight: 800;
+            display: block;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .score-label {
+            font-size: 1.2em;
+            opacity: 0.95;
+        }
+
+        .article-body {
+            font-size: 1.1em;
+            color: #333;
+        }
+
+        .article-body p {
+            margin-bottom: 25px;
+            text-align: justify;
+        }
+
+        .quote-box {
+            background: linear-gradient(135deg, #fff5f5, #ffe0e0);
+            border-left: 5px solid #ff6b6b;
+            padding: 25px 30px;
+            margin: 30px 0;
+            border-radius: 0 15px 15px 0;
+            font-style: italic;
+        }
+
+        .quote-box .heart {
+            color: #ff6b6b;
+            font-size: 1.5em;
+        }
+
+        .dream-box {
+            background: linear-gradient(135deg, #e8f8f5, #d1f2eb);
+            border: 2px solid #1abc9c;
+            border-radius: 15px;
+            padding: 30px;
+            margin: 30px 0;
+            text-align: center;
+        }
+
+        .dream-box h3 {
+            color: #16a085;
+            font-size: 1.4em;
+            margin-bottom: 15px;
+        }
+
+        .dream-icon {
+            font-size: 3em;
+            margin-bottom: 15px;
+        }
+
+        .profile-card {
+            background: linear-gradient(135deg, #ffecd2, #fcb69f);
+            border-radius: 20px;
+            padding: 30px;
+            margin: 30px 0;
+            display: flex;
+            align-items: center;
+            gap: 25px;
+        }
+
+        .profile-avatar {
+            width: 120px;
+            height: 120px;
+            background: linear-gradient(135deg, #ff9a9e, #fecfef);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4em;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            flex-shrink: 0;
+        }
+
+        .profile-info h3 {
+            color: #c0392b;
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+
+        .profile-info p {
+            color: #666;
+            margin: 5px 0;
+        }
+
+        .profile-info .tags {
+            margin-top: 15px;
+        }
+
+        .tag {
+            display: inline-block;
+            background: white;
+            color: #e74c3c;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            margin-right: 8px;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .timeline {
+            margin: 30px 0;
+            padding-left: 30px;
+            border-left: 3px solid #667eea;
+        }
+
+        .timeline-item {
+            position: relative;
+            padding: 15px 0 15px 25px;
+        }
+
+        .timeline-item::before {
+            content: '✓';
+            position: absolute;
+            left: -41px;
+            top: 15px;
+            width: 24px;
+            height: 24px;
+            background: #667eea;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8em;
+        }
+
+        .timeline-item strong {
+            color: #667eea;
+        }
+
+        .message-from-dad {
+            background: linear-gradient(135deg, #a8edea, #fed6e3);
+            border-radius: 20px;
+            padding: 35px;
+            margin: 40px 0;
+            text-align: center;
+        }
+
+        .message-from-dad h3 {
+            color: #e74c3c;
+            font-size: 1.5em;
+            margin-bottom: 20px;
+        }
+
+        .message-from-dad p {
+            font-size: 1.2em;
+            color: #444;
+            line-height: 1.8;
+        }
+
+        .message-from-dad .signature {
+            margin-top: 20px;
+            font-weight: 700;
+            color: #667eea;
+        }
+
+        .celebration-footer {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .celebration-footer p {
+            margin: 10px 0;
+            font-size: 1.1em;
+        }
+
+        .confetti {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1000;
+            overflow: hidden;
+        }
+
+        .confetti-piece {
+            position: absolute;
+            width: 10px;
+            height: 20px;
+            top: -20px;
+            animation: confetti-fall 5s linear infinite;
+        }
+
+        @keyframes confetti-fall {
+            0% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(100vh) rotate(720deg);
+                opacity: 0;
+            }
+        }
+
+        .stars {
+            font-size: 2em;
+            color: #ffd700;
+            text-align: center;
+            margin: 20px 0;
+            animation: twinkle 1.5s ease-in-out infinite;
+        }
+
+        @keyframes twinkle {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+        @media (max-width: 768px) {
+            .celebration-header h1 {
+                font-size: 1.8em;
+            }
+            
+            .article-content {
+                padding: 25px;
+            }
+            
+            .profile-card {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .score-number {
+                font-size: 3em;
+            }
+        }
+
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+            
+            .confetti {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 색종이 효과 -->
+    <div class="confetti">
+        <div class="confetti-piece" style="left: 10%; background: #ff6b6b; animation-delay: 0s;"></div>
+        <div class="confetti-piece" style="left: 20%; background: #feca57; animation-delay: 0.5s;"></div>
+        <div class="confetti-piece" style="left: 30%; background: #48dbfb; animation-delay: 1s;"></div>
+        <div class="confetti-piece" style="left: 40%; background: #ff9ff3; animation-delay: 1.5s;"></div>
+        <div class="confetti-piece" style="left: 50%; background: #54a0ff; animation-delay: 2s;"></div>
+        <div class="confetti-piece" style="left: 60%; background: #5f27cd; animation-delay: 2.5s;"></div>
+        <div class="confetti-piece" style="left: 70%; background: #00d2d3; animation-delay: 3s;"></div>
+        <div class="confetti-piece" style="left: 80%; background: #ff6b6b; animation-delay: 3.5s;"></div>
+        <div class="confetti-piece" style="left: 90%; background: #feca57; animation-delay: 4s;"></div>
+    </div>
+
+    <div class="article-container">
+        <!-- 축하 헤더 -->
+        <header class="celebration-header">
+            <span class="news-badge">🎊 특종! 합격 소식 🎊</span>
+            <h1>옥정중 수석 졸업생,<br>명문 안산 동산고 당당히 합격!</h1>
+            <p class="subtitle">"미래의 서울대 의대생, 오늘 첫 걸음을 내딛다"</p>
+        </header>
+
+        <!-- 기사 본문 -->
+        <article class="article-content">
+            <div class="article-meta">
+                <span>👨‍👩‍👧 가족신문 특별호</span>
+                <span>2024년 12월 24일 | 크리스마스 이브 특집</span>
+            </div>
+
+            <div class="stars">⭐ 🌟 ✨ 🌟 ⭐</div>
+
+            <!-- 프로필 카드 -->
+            <div class="profile-card">
+                <div class="profile-avatar" style="background: none; overflow: hidden;">
+                    <img src="daughter-photo.png" alt="합격생 사진" style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%;">
+                </div>
+                <div class="profile-info">
+                    <h3>오늘의 주인공</h3>
+                    <p>📍 출신: 옥정중학교</p>
+                    <p>🎯 합격: 안산 동산고등학교</p>
+                    <p>💭 꿈: 서울대학교 의과대학</p>
+                    <div class="tags">
+                        <span class="tag">💖 예쁨</span>
+                        <span class="tag">🌸 사랑스러움</span>
+                        <span class="tag">📚 똑똒함</span>
+                        <span class="tag">⭐ 아빠 자랑</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="article-body">
+                <p>
+                    <strong>경기도 양주시 옥정동에서 희소식이 전해졌다.</strong> 
+                    옥정중학교를 우수한 성적으로 졸업한 박 양이 명문 안산 동산고등학교에 당당히 합격했다는 소식이다.
+                    이 소식에 가족들은 물론, 주변 모든 이들이 축하의 박수를 보내고 있다.
+                </p>
+
+                <!-- 성적 하이라이트 -->
+                <div class="highlight-score">
+                    <span class="score-number">~200점</span>
+                    <span class="score-label">🏆 옥정중학교 졸업 성적 🏆</span>
+                </div>
+
+                <p>
+                    박 양은 옥정중학교에서 <strong>거의 200점에 가까운 놀라운 성적</strong>을 기록하며 
+                    학업 역량을 입증했다. 꾸준한 노력과 타고난 재능이 만들어낸 결과라는 평가다.
+                    교사들 사이에서도 "예쁘고 공부도 잘하는 모범생"으로 유명했다고 전해진다.
+                </p>
+
+                <div class="quote-box">
+                    <span class="heart">💕</span>
+                    <p>"우리 딸은 세상에서 가장 예쁘고, 가장 사랑스럽고, 가장 자랑스러운 아이입니다. 
+                    열심히 노력하는 모습을 지켜보면서 아빠로서 정말 감동받았습니다. 
+                    오늘 이 합격은 당연한 결과입니다."</p>
+                    <p style="text-align: right; font-style: normal; color: #888;">— 세상에서 가장 행복한 아빠</p>
+                </div>
+
+                <p>
+                    안산 동산고등학교는 경기도 내 손꼽히는 명문 고등학교로, 
+                    매년 서울대, 연세대, 고려대 등 최상위권 대학에 다수의 합격생을 배출하는 것으로 유명하다.
+                    박 양의 합격은 앞으로의 무한한 가능성을 보여주는 신호탄이다.
+                </p>
+
+                <!-- 꿈 박스 -->
+                <div class="dream-box">
+                    <div class="dream-icon">🩺👩‍⚕️🏥</div>
+                    <h3>Ultimate Goal: 서울대학교 의과대학</h3>
+                    <p>
+                        "아픈 사람들을 치료하고 도와주는 의사가 되고 싶어요."<br>
+                        따뜻한 마음과 뛰어난 두뇌를 겸비한 그녀의 꿈은<br>
+                        <strong>대한민국 최고의 의과대학, 서울대학교 의대 진학!</strong>
+                    </p>
+                </div>
+
+                <p>
+                    전문가들은 박 양의 학업 성취도와 목표 의식, 그리고 꾸준한 노력을 고려할 때
+                    서울대 의대 진학도 충분히 가능하다고 전망한다. 
+                    안산 동산고에서의 3년이 그 꿈을 향한 든든한 발판이 될 것이다.
+                </p>
+
+                <!-- 타임라인 -->
+                <h3 style="color: #667eea; margin: 30px 0 20px;">📈 빛나는 발자취</h3>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <strong>옥정중학교 입학</strong> - 새로운 시작
+                    </div>
+                    <div class="timeline-item">
+                        <strong>꾸준한 성적 향상</strong> - 노력은 배신하지 않는다
+                    </div>
+                    <div class="timeline-item">
+                        <strong>거의 200점 달성</strong> - 놀라운 학업 성취
+                    </div>
+                    <div class="timeline-item">
+                        <strong>안산 동산고 합격!</strong> - 오늘의 영광 🎉
+                    </div>
+                    <div class="timeline-item">
+                        <strong>Coming Soon...</strong> - 서울대 의대 합격 (예정) 🩺
+                    </div>
+                </div>
+
+                <!-- 아빠의 메시지 -->
+                <div class="message-from-dad">
+                    <h3>💌 세상에서 가장 사랑하는 딸에게</h3>
+                    <p>
+                        축하해, 우리 딸! 🎊<br><br>
+                        네가 열심히 노력하는 모습을 지켜보면서<br>
+                        아빠는 매일매일 감동받았단다.<br><br>
+                        세상에서 가장 예쁘고, 가장 똑똒하고,<br>
+                        가장 사랑스러운 우리 딸.<br><br>
+                        앞으로도 네 꿈을 향해 힘차게 날아가렴.<br>
+                        아빠는 언제나 네 편이야.<br><br>
+                        <strong>사랑해, 우리 딸! ❤️</strong>
+                    </p>
+                    <p class="signature">— 세상에서 가장 자랑스러운 아빠가 💕</p>
+                </div>
+            </div>
+
+            <div class="stars">🎊 🎉 🌟 🎊 🎉</div>
+        </article>
+
+        <!-- 푸터 -->
+        <footer class="celebration-footer">
+            <p>🎄 2024년 크리스마스 이브, 우리 가족에게 찾아온 최고의 선물 🎄</p>
+            <p>💖 안산 동산고 합격을 진심으로 축하합니다! 💖</p>
+            <p style="font-size: 2em; margin-top: 15px;">🎊🎉✨🌟💕</p>
+        </footer>
+    </div>
+
+    <script>
+        // 추가 색종이 효과
+        function createConfetti() {
+            const colors = ['#ff6b6b', '#feca57', '#48dbfb', '#ff9ff3', '#54a0ff', '#5f27cd', '#00d2d3', '#ffd700'];
+            const confettiContainer = document.querySelector('.confetti');
+            
+            for (let i = 0; i < 30; i++) {
+                const confetti = document.createElement('div');
+                confetti.className = 'confetti-piece';
+                confetti.style.left = Math.random() * 100 + '%';
+                confetti.style.background = colors[Math.floor(Math.random() * colors.length)];
+                confetti.style.animationDelay = Math.random() * 5 + 's';
+                confetti.style.animationDuration = (Math.random() * 3 + 4) + 's';
+                confettiContainer.appendChild(confetti);
+            }
+        }
+        
+        createConfetti();
+    </script>
+</body>
+</html>
